@@ -3,7 +3,6 @@
   <head>
     <meta http-equiv="Content-type" content="text/html; charset=utf-8">
     <title>Object Detection API</title>
-    <link rel='shortcut icon' href='favicon.ico'/>
 
     <script language="javascript" type="text/javascript">
       function ChangePhoto(name, img) {
@@ -29,12 +28,15 @@
 
     {% from "_formhelpers.html" import render_field %}
 
-    <h1>Object Detection API</h1>
+    <h1>Object Detection Using Tensorflow</h1>
     <h3>Upload a color photo file.</h3>
     <div>
       <form id="upload" method=post action={{ url_for('post') }} enctype="multipart/form-data">
         {{ render_field(photo_form.input_photo) }}
-        <p><input type="button" onclick="WaitDisplay();" value="Upload"></p>
+        <p>
+          <button class="ui primary button" onclick="WaitDisplay();"> Upload</button>
+        </p>
+          <!-- <input type="button" onclick="WaitDisplay();" value="Upload"> -->
       </form>
     </div>
 
@@ -45,7 +47,7 @@
         <div id="label">original</div>
         <div><img id="photo" src="{{ result['original'] }}" align="left" hspace="10" vspace="10"></div>
         <p>
-          <a href="javascript:void(0);" onclick="ChangePhoto('original');">original</a>
+          <a href="javascript:void(0);" onclick="ChangePhoto('original');">Original Image</a>
           </br>
           {% for name, img in result.iteritems() %}
             {% if name != 'original' %}
