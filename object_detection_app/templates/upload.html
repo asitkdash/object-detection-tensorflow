@@ -33,10 +33,7 @@
     <div>
       <form id="upload" method=post action={{ url_for('post') }} enctype="multipart/form-data">
         {{ render_field(photo_form.input_photo) }}
-        <p>
-          <button class="ui primary button" onclick="WaitDisplay();"> Upload</button>
-        </p>
-          <!-- <input type="button" onclick="WaitDisplay();" value="Upload"> -->
+        <p><input type="button" onclick="WaitDisplay();" value="Upload"></p>
       </form>
     </div>
 
